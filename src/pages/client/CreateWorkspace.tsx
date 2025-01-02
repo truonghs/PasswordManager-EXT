@@ -13,7 +13,8 @@ import { useAccount } from '@/hooks'
 import { workspaceKeys } from '@/keys'
 import { CustomBtn, CustomInput } from '@/components'
 import { HOME_TAB_KEY, PATH } from '@/utils/constants'
-import { IAccountInputData, IPaginationParams, IWorkspaceInputData } from '@/interfaces'
+import { IAccountInputData, IErrorResponse, IPaginationParams, IWorkspaceInputData } from '@/interfaces'
+import { AxiosError } from 'axios'
 
 const { Text } = Typography
 
@@ -57,8 +58,9 @@ export function CreateWorkspace() {
       queryClient.invalidateQueries({ queryKey: workspaceKeys.lists() })
       message.success(t('createWorkspace.saveSuccess'))
     },
-    onError: (e) => {
-      message.error(e.message)
+    onError: (error: AxiosError) => {
+      const errorMessage = (error.response?.data as IErrorResponse)?.message
+      message.error(errorMessage)
     }
   })
 

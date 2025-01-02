@@ -13,7 +13,8 @@ import { decryptPassword } from '@/utils/helpers'
 import { CustomBtn, CustomInput } from '@/components'
 import { useAccount, useChromeStorage } from '@/hooks'
 import { ACCOUNT_FIELDS, LOCAL_STORAGE_KEYS } from '@/utils/constants'
-import { IAccountInputData, ICreateAccountData, IPaginationParams } from '@/interfaces'
+import { IAccountInputData, ICreateAccountData, IErrorResponse, IPaginationParams } from '@/interfaces'
+import { AxiosError } from 'axios'
 
 type RequestActionSavingAccount = {
   action: string
@@ -74,8 +75,9 @@ export function CreateAccount() {
       message.success(t('editAccount.updateSuccess'))
       handleCloseForm()
     },
-    onError: (e) => {
-      message.error(e.message)
+    onError: (error: AxiosError) => {
+      const errorMessage = (error.response?.data as IErrorResponse)?.message
+      message.error(errorMessage)
     }
   })
 
