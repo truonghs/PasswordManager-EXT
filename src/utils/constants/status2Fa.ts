@@ -1,0 +1,13 @@
+export const STATUS_2FA = {
+  DISABLED: 'DISABLED',
+  ENABLED: 'ENABLED',
+  NOT_REGISTERED: 'NOT_REGISTERED'
+} as const
+
+export const STATUS_ENABLE_2FA = {
+  TWO_FA_ENABLED_NO_SECRET: 'TWO_FA_ENABLED_NO_SECRET',
+  TWO_FA_ENABLED_WITH_SECRET: 'TWO_FA_ENABLED_WITH_SECRET'
+} as const
+
+export type Status2FA = keyof typeof STATUS_2FA
+export type StatusEnable2FA = keyof typeof STATUS_ENABLE_2FA

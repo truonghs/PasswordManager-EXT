@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #b3caf8;
+}
+
+.ant-form-item-label {
+  text-align: left !important;
+  padding: 0 !important;
+}
+
+:where(.css-qnu6hi).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled),
+:where(.css-qnu6hi).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):focus-within {
+  background: #ffffff;
+  border: 1px solid #ff4d4f;
+  box-shadow: 0 0 0 1px #ff4d4f;
+}
+
+.ant-select-selector {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+  font-weight: 500 !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.375rem !important;
+  padding: 9px 9px !important;
+}
+.ant-select-selector:hover {
+  border-color: #0a2fb6 !important;
+}
+
+.ant-select-selector:focus-within {
+  border-color: #0a2fb6 !important;
+  box-shadow: 0 0 0 1px #0a2fb6 !important;
+}
+
+.ant-select-selection-placeholder {
+  padding-left: 9px;
+}
+.ant-select-item.ant-select-item-option {
+  padding: 10px !important;
+  font-size: 16px !important;
+}
+.ant-form-item-explain-error {
+  text-align: left !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #fff !important;
+}
+
+.ant-tabs-tab-active {
+  background-color: #0a2fb6 !important;
+}
+
+.ant-tabs-nav-list {
+  flex: 1;
+  justify-content: space-between;
+}
+
+.ant-tabs-tab-btn {
+  font-size: 16px !important;
+}
+
+.ant-tabs-tab {
+  flex: 1;
+  margin: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  justify-content: center !important;
+  padding: 10px 16px !important;
+}
